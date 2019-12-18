@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app1.js"></script>
+</head>
+<body>
+<noscript>
+    <h2 style="color: #ff0000">似乎你的浏览器不支持javascript！WebSocket依赖于启用。请启用javascript并重新加载此页面！</h2>
+</noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket连接:</label>
+                    <button id="connect" class="btn btn-default" type="submit">连接</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">断开</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6" style="border: aqua solid 1px">
+            <h2>这里是一对一聊天</h2>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="content">你的名字叫什么？</label>
+                    <input type="text" id="fromUserId" class="form-control" placeholder="我是200？？？">
+                    <input type="text" id="toUserId" class="form-control" placeholder="发送给谁？？？">
+                    <input type="text" id="content" class="form-control" placeholder="这里写内容？？？">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">发送</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>问候语</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
